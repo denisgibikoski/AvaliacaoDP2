@@ -7,10 +7,10 @@ package avaliacaodp2;
 
 import adapter.classes.Chocolate;
 import adapter.classes.ChocolateAdapter;
+import adapter.interfaces.Analisar;
 import iterator.classes.Produto;
 import iterator.classes.ProdutosFloricultura;
 import iterator.classes.Relatorio;
-import iterator.interfaces.Iterator;
 
 /**
  *
@@ -52,9 +52,8 @@ public class AvaliacaoDP2 {
         
         //Adapter
         System.out.println("\nPadrao de Adapter\n");
-        Produto flor = new Produto("Rosas Brancas", .50, "Buques");
-        Produto chocolate = new Chocolate("Chocolate Amargo", 5.0, "Doces");
-        ChocolateAdapter chocolateProduto = new ChocolateAdapter( (Chocolate) chocolate);
+        Analisar flor = new Produto("Rosas Brancas", .50, "Buques");
+        Analisar chocolateProduto = new ChocolateAdapter( new Chocolate("Chocolate Amargo", 5.0, "Doces"));
         
         //teste1
         flor.analisar();
