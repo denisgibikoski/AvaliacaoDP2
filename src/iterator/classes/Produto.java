@@ -5,18 +5,22 @@
  */
 package iterator.classes;
 
+import adapter.interfaces.Analisar;
 import composite.classes.ComponentesSetor;
 
 /**
  *
  * @author denis
  */
-public class Produto extends ComponentesSetor{
+public class Produto extends ComponentesSetor implements  Analisar{
     
    
     private String descricao;
     private double preco;
     private String setor;
+
+  
+    
 
     public Produto(String descricao, double preco, String setor) {
         this.descricao = descricao;
@@ -55,7 +59,14 @@ public class Produto extends ComponentesSetor{
     
     
 
-   
+   public void analisarQualidade(){
+       System.out.println("Analizando Qualidade");
+   }
+
+    @Override
+    public void analisar() {
+       this.analisarQualidade();
+    }
 
     
     

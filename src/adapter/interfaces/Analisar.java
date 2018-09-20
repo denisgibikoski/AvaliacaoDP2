@@ -3,18 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package observer.interfaces;
-
-import observer.classes.Veiculo;
-
-
+package adapter.interfaces;
 
 /**
  *
  * @author denis
  */
-public interface Observer {
+public interface Analisar{
     
-    public void update(Veiculo veiculo);
-    
+    public void analisar();
 }

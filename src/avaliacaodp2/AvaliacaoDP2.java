@@ -5,6 +5,9 @@
  */
 package avaliacaodp2;
 
+import adapter.classes.Chocolate;
+import adapter.classes.ChocolateAdapter;
+import iterator.classes.Produto;
 import iterator.classes.ProdutosFloricultura;
 import iterator.classes.Relatorio;
 import iterator.interfaces.Iterator;
@@ -22,13 +25,13 @@ public class AvaliacaoDP2 {
 
         Relatorio relatorio = new Relatorio();
         //Composite
-        System.out.println("Padrao de Composite");
+        System.out.println("\nPadrao de Composite\n");
         System.out.println("----------------------------");
         relatorio.imprimeSetoresFloricultura();
         System.out.println("----------------------------");
 
         //Iterator
-        System.out.println("Padrao de Iterator");
+        System.out.println("\nPadrao de Iterator\n");
         String descricao = "PRODUTOS FLORICULTURA";
         System.out.println("-------Produtos Vendidos-----");
         ProdutosFloricultura pf = new ProdutosFloricultura();
@@ -42,7 +45,22 @@ public class AvaliacaoDP2 {
         pf.addProduto("Rosas Brancas", "Mudas", 0.50);
 
         relatorio.imprimeProdutos(pf.createIterator(), descricao);
-
+        
+        
+        //Observer
+        System.out.println("\nPadrao Observer\n");
+        
+        //Adapter
+        System.out.println("\nPadrao de Adapter\n");
+        Produto flor = new Produto("Rosas Brancas", .50, "Buques");
+        Produto chocolate = new Chocolate("Chocolate Amargo", 5.0, "Doces");
+        ChocolateAdapter chocolateProduto = new ChocolateAdapter( (Chocolate) chocolate);
+        
+        //teste1
+        flor.analisar();
+        chocolateProduto.analisar();
+        
+        
     }
 
 }
