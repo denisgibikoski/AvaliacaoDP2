@@ -5,6 +5,9 @@
  */
 package avaliacaodp2;
 
+import Observer.Motorista;
+import Observer.Observador;
+import observer.Observer.Veiculo;
 import adapter.classes.Chocolate;
 import adapter.classes.ChocolateAdapter;
 import adapter.interfaces.Analisar;
@@ -45,10 +48,20 @@ public class AvaliacaoDP2 {
         pf.addProduto("Rosas Brancas", "Mudas", 0.50);
 
         relatorio.imprimeProdutos(pf.createIterator(), descricao);
-        
-        
+                
         //Observer
         System.out.println("\nPadrao Observer\n");
+         Veiculo gol = new Veiculo();
+        
+        Observador motorista = new Motorista("Jusicrelson", gol);
+        gol.receberSaida("Pato Branco - Bairro Alvorada.");
+        gol.receberSaida("Francisco Beltrão - Centro.");
+
+        Observador mmotorista2 = new Motorista("Maria", gol);
+        Observador mmotorista3 = new Motorista("Jonisvaldo", gol);
+        gol.receberSaida("Francisco Beltrão - Vila Nova.");   
+           
+             
         
         //Adapter
         System.out.println("\nPadrao de Adapter\n");
